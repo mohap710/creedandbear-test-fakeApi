@@ -9,7 +9,6 @@ const app = express();
 app.use(express.json());
 
 // Cors setup
-const cors = require('cors')
 app.use(cors());
 app.use((_, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
