@@ -9,7 +9,6 @@ export const login = async (req, res, next) => {
     setTimeout(() => {
       let { email } = req.body;
      // Remove whitespace in the input   
-      email = email.trim()
       if (!email) {
         return res.status(400).json({
           data: {
@@ -18,6 +17,7 @@ export const login = async (req, res, next) => {
           },
         });
       }
+      email = email.trim()
       const user = users.find((user) => email === user.email);
 
       if (!user) {
